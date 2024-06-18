@@ -51,7 +51,7 @@ func main() {
 func handleCommand(bot *tgbotapi.BotAPI, message *tgbotapi.Message) {
 	switch message.Command() {
 	case "start":
-		msg := tgbotapi.NewMessage(message.Chat.ID, "Добро пожаловать в бот.")
+		msg := tgbotapi.NewMessage(message.Chat.ID, "Welcome!.")
 		msg.ReplyMarkup = getMainKeyboard()
 		bot.Send(msg)
 	default:
@@ -61,7 +61,7 @@ func handleCommand(bot *tgbotapi.BotAPI, message *tgbotapi.Message) {
 }
 
 func getMainKeyboard() tgbotapi.ReplyKeyboardMarkup {
-	button1 := tgbotapi.NewKeyboardButton("Выгрузить")
+	button1 := tgbotapi.NewKeyboardButton("Download")
 	row1 := tgbotapi.NewKeyboardButtonRow(button1)
 
 	keyboard := tgbotapi.NewReplyKeyboard(row1)
